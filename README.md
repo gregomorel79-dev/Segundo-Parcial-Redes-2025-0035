@@ -109,9 +109,11 @@ El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`D
 
 ![Zabbix cliente DHCP](img/12-zabbix-cliente-dhcp.png)
 
-Y recibe los datos SNMP (comunidad de solo lectura) de R1 y SW1:
+Y recibe los datos SNMP (comunidad de solo lectura) del router y de los switches. Host R1 con disponibilidad **SNMP en verde**:
 
 ![Zabbix hosts](img/13-zabbix-hosts.png)
+
+*Latest data* con valores recibidos por SNMP de R1, SW1 y SW2 (R1: 64 ítems, SW1: 104 ítems):
 
 ![Zabbix latest data](img/14-zabbix-latest-data.png)
 
