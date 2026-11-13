@@ -1,6 +1,6 @@
 # Segundo Parcial · Seguridad de Redes (DHCP, OSPF cifrado, CIS, AAA/RADIUS, SSH y Zabbix)
 
-> ▶️ **Video de la demostración:** _(pendiente: enlace de YouTube)_
+> ▶️ **Video de la demostración:** [https://youtu.be/F_GN2BGLCpo](https://youtu.be/F_GN2BGLCpo)
 
 **Estudiante:** Gregorys Morel Duluc · **Matrícula:** 2025-0035 · **Materia:** Seguridad de Redes · **ITLA**
 
@@ -105,7 +105,7 @@ En R1 y SW1: usuario local con contraseña cifrada (`username admin privilege 15
 
 ### 3.8 Zabbix como cliente DHCP con datos SNMP (requisito 8)
 
-El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`DHCPOFFER from 10.20.35.1`, `bound to 10.20.35.101`):
+El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`DHCPOFFER from 10.20.35.1`, `bound to 10.20.35.100`):
 
 ![Zabbix cliente DHCP](img/12-zabbix-cliente-dhcp.png)
 
