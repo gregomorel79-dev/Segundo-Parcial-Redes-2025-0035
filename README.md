@@ -29,8 +29,8 @@ El direccionamiento sale de la matrícula **2025-0035**: `20` = año 2025 y `35`
 | SW1 | Switch Cisco IOSvL2: SSH, SNMP | Vlan1 | 10.20.35.2/24 |
 | SW2 | Switch Cisco IOSvL2 (acceso de Zabbix) | Vlan1 | 10.20.35.5/24 |
 | WS-2025-0035 | Windows Server: Active Directory + NPS | NIC | 10.20.35.3 |
-| Zabbix | Servidor Zabbix (Linux), **cliente DHCP** | eth0 | 10.20.35.100 (DHCP) |
-| PC1 | PC de usuarios, **cliente DHCP** | e0 | 10.20.35.101 (DHCP) |
+| Zabbix | Servidor Zabbix (Linux), **cliente DHCP** | eth0 | 10.20.35.x (DHCP de R1) |
+| PC1 | PC de usuarios, **cliente DHCP** | e0 | 10.20.35.x (DHCP de R1) |
 
 ## 3. Requisitos y evidencias
 
@@ -40,7 +40,7 @@ R1 es el servidor DHCP de la LAN (`ip dhcp pool LAN-2025-0035`, red 10.20.35.0/2
 
 ![PC1 DHCP](img/04-pc1-dhcp.png)
 
-En R1, `show ip dhcp binding` muestra las direcciones entregadas a Zabbix (.100) y a PC1 (.101) (parte inferior de la imagen):
+En R1, `show ip dhcp binding` muestra las direcciones entregadas a los clientes de la LAN (Zabbix y PC1) (parte inferior de la imagen):
 
 ![R1 OSPF y DHCP](img/02-r1-ospf-dhcp.png)
 
@@ -105,11 +105,15 @@ En R1 y SW1: usuario local con contraseña cifrada (`username admin privilege 15
 
 ### 3.8 Zabbix como cliente DHCP con datos SNMP (requisito 8)
 
-El servidor Zabbix obtiene su dirección por DHCP desde R1 (10.20.35.100, ver `show ip dhcp binding` en 3.1) y recibe datos SNMP (comunidad de solo lectura) de R1 y SW1:
+El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`DHCPOFFER from 10.20.35.1`, `bound to 10.20.35.101`):
 
-![Zabbix hosts](img/12-zabbix-hosts.png)
+![Zabbix cliente DHCP](img/12-zabbix-cliente-dhcp.png)
 
-![Zabbix latest data](img/13-zabbix-latest-data.png)
+Y recibe los datos SNMP (comunidad de solo lectura) de R1 y SW1:
+
+![Zabbix hosts](img/13-zabbix-hosts.png)
+
+![Zabbix latest data](img/14-zabbix-latest-data.png)
 
 ## 4. Archivos de configuración
 
