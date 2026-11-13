@@ -105,7 +105,7 @@ En R1 y SW1: usuario local con contraseña cifrada (`username admin privilege 15
 
 ### 3.8 Zabbix como cliente DHCP con datos SNMP (requisito 8)
 
-El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`DHCPOFFER from 10.20.35.1`, `bound to 10.20.35.100`):
+El servidor Zabbix obtiene su dirección como **cliente DHCP** del router R1 (`DHCPOFFER from 10.20.35.1`, `bound to 10.20.35.101`):
 
 ![Zabbix cliente DHCP](img/12-zabbix-cliente-dhcp.png)
 
