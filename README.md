@@ -117,6 +117,10 @@ Y recibe los datos SNMP (comunidad de solo lectura) del router y de los switches
 
 ![Zabbix latest data](img/14-zabbix-latest-data.png)
 
+Tras reiniciar el laboratorio, Zabbix volvió a obtener dirección por DHCP del pool de R1 (`10.20.35.100`) y responde al ping desde el equipo de administración:
+
+![Ping a Zabbix tras reinicio](img/15-ping-zabbix.png)
+
 ## 4. Archivos de configuración
 
 | Equipo | Archivo |
